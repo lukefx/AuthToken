@@ -1,0 +1,17 @@
+development:
+  ldap_server: '192.168.1.1'
+  ldap_port: 389
+  bind_user: 'username@domain.com'
+  bind_password: 'passw0rd'
+  
+test:
+  ldap_server: '192.168.1.1'
+  ldap_port: 389
+  bind_user: 'username@domain.com'
+  bind_password: 'passw0rd'
+
+production:
+  ldap_server: '192.168.1.1'
+  ldap_port: 389
+  bind_user: 'username@domain.com'
+  bind_password: 'passw0rd'

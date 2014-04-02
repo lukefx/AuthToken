@@ -3,15 +3,18 @@ development:
   ldap_port: 389
   bind_user: 'username@domain.com'
   bind_password: 'passw0rd'
+  root: 'dc=mydomain,dc=com'
   
 test:
   ldap_server: '192.168.1.1'
   ldap_port: 389
   bind_user: 'username@domain.com'
   bind_password: 'passw0rd'
+  root: 'dc=mydomain,dc=com'
 
 production:
   ldap_server: '192.168.1.1'
   ldap_port: 389
   bind_user: 'username@domain.com'
   bind_password: 'passw0rd'
+  root: 'dc=mydomain,dc=com'

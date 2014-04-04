@@ -1,14 +1,11 @@
 class TokensController < ApplicationController
 
-  # GET tokens, http header 'Authorizazion' TOKEN
-  # GET tokens/iHi56sesgI5wiGoF1s-zZA
-  # GET tokens?token=iHi56sesgI5wiGoF1s-zZA
   def index
     @user = User.find_by_token(@token || params[:token])
     if @user && @user.expiration > 2.hours.ago
       render json: { token: @user.token, data: JWT.encode(@user, Rails.application.secrets.secret_key_base) }
     else
-      @user.delete # delete expired token
+      @user.delete if @user
       render nothing: true, status: :unauthorized
     end
   end
@@ -23,6 +20,7 @@ class TokensController < ApplicationController
       user.expiration = Time.zone.now
       user.request_ip = params[:remote_ip] || request.remote_ip
     end
+    reset_session # we go completely stateless
     render json: { token: @user.token, data: JWT.encode(@user, Rails.application.secrets.secret_key_base) }
   end
 

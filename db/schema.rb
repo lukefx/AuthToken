@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20140401134539) do
 
-  create_table 'users', force: true do |t|
-    t.string 'username'
-    t.string 'request_ip'
-    t.datetime 'expiration'
-    t.string 'token'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "request_ip"
+    t.datetime "expiration"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -1,9 +1,3 @@
-# SQLite version 3.x
-#   gem 'activerecord-jdbcsqlite3-adapter'
-#
-# Configure Using Gemfile
-# gem 'activerecord-jdbcsqlite3-adapter'
-#
 default: &default
   adapter: sqlite3
 
@@ -22,4 +16,4 @@ test:
 # instead read the configuration from the environment.
 production:
   <<: *default
-  url: db/production.sqlite3
+  database: db/production.sqlite3
